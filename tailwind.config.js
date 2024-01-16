@@ -7,6 +7,7 @@ module.exports = {
         "text-0": "#000",
         "text-100": "#969696",
         "text-200": "#54595f",
+        "text-700": "#3B3B3B",
         "primary-blue": "#124FC9",
       },
       borderRadius: {
