@@ -1,3 +1,4 @@
+import BottomNavigation from "@/views/layout/BottomNavigation/BottomNavigation";
 import Footer from "@/views/layout/footer";
 import Header from "@/views/layout/header";
 
@@ -9,6 +10,7 @@ export default function RootLayout({ children }) {
         {children}
       </div>
       <Footer />
+      <BottomNavigation />
     </>
   );
 }

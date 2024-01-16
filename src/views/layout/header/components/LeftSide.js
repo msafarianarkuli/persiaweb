@@ -1,10 +1,11 @@
 import { FaPlus, FaUser } from "react-icons/fa";
+import { AiOutlineIdcard } from "react-icons/ai";
 
 function LeftSide() {
   return (
-    <div className='flex gap-x-4 items-center'>
+    <div className='hidden lg:flex gap-x-4 items-center '>
       <div className='flex items-center gap-x-2 cursor-pointer'>
-        <FaUser />
+        <FaUser className='text-lg mb-1' />
         پروفایل
       </div>
       <button
@@ -14,7 +15,8 @@ function LeftSide() {
       </button>
       <button
         type='button'
-        className='text-text-200 bg-[#E2E2E2] font-medium px-5 py-2.5 me-2 mb-2 flex items-center rounded gap-x-2'>
+        className='text-text-200 bg-bg-200 font-medium px-5 py-2.5 me-2 mb-2 flex items-center rounded gap-x-2'>
+        <AiOutlineIdcard className='text-lg' />
         رزومه های دریافتی
       </button>
     </div>
