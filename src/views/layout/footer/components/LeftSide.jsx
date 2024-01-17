@@ -5,8 +5,7 @@ function LeftSide() {
     <span className='flex justify-center'>
       طراحی توسط{" "}
       <Link href='/'>
-        {" "}
-        پرشیا وب<span> </span>
+        {"\u00A0"}پرشیا وب{"\u00A0"}
       </Link>
     </span>
   );
