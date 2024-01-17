@@ -13,7 +13,7 @@ const items = [
     link: "advertisement-registration",
   },
   { id: 4, Icon: FaRegIdCard, title: "رزومه ها", link: "resumes-received" },
-  { id: 5, Icon: FaUser, title: "پروفایل من", link: "" },
+  { id: 5, Icon: FaUser, title: "پروفایل من", link: "profile" },
 ];
 
 function BottomNavigation(props) {

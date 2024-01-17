@@ -5,10 +5,10 @@ import Link from "next/link";
 function LeftSide() {
   return (
     <div className='hidden lg:flex gap-x-4 items-center '>
-      <div className='ouline-white-button'>
+      <Link href='profile' className='ouline-white-button'>
         <FaUser className='text-lg mb-1' />
         پروفایل
-      </div>
+      </Link>
       <Link
         href='advertisement-registration'
         className='primary-button font-medium'>
