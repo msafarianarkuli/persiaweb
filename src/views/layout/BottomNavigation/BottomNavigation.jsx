@@ -6,7 +6,12 @@ import Link from "next/link";
 const items = [
   { id: 1, Icon: FaMapMarkerAlt, title: "همه جا", link: "" },
   { id: 2, Icon: BiSolidBriefcaseAlt2, title: "همه مشاغل", link: "" },
-  { id: 3, Icon: FaPlus, title: "ثبت آگهی", link: "" },
+  {
+    id: 3,
+    Icon: FaPlus,
+    title: "ثبت آگهی",
+    link: "advertisement-registration",
+  },
   { id: 4, Icon: FaRegIdCard, title: "رزومه ها", link: "resumes-received" },
   { id: 5, Icon: FaUser, title: "پروفایل من", link: "" },
 ];

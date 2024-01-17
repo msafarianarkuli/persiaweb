@@ -9,7 +9,9 @@ function LeftSide() {
         <FaUser className='text-lg mb-1' />
         پروفایل
       </div>
-      <Link href='' className='primary-button font-medium'>
+      <Link
+        href='advertisement-registration'
+        className='primary-button font-medium'>
         <FaPlus /> ثبت آگهی
       </Link>
       <Link href='resumes-received' className='secondary-button font-medium'>
