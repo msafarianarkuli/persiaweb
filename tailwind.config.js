@@ -9,6 +9,7 @@ module.exports = {
         "text-200": "#54595f",
         "text-700": "#3B3B3B",
         "primary-blue": "#124FC9",
+        "light-primary-blue": "#3296C9",
         "bg-100": "#F1F2F3",
         "bg-200": "#E2E2E2",
       },

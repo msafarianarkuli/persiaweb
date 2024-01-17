@@ -13,13 +13,14 @@ const items = [
 function BottomNavigation(props) {
   return (
     <div className='lg:hidden fixed bottom-0 left-0 z-50 w-full bg-white border-t border-gray-200 py-2'>
-      <div className='flex flex-wrap gap-y-4 justify-center max-w-lg mx-auto'>
+      <div className='flex flex-wrap gap-y-4 justify-between'>
         {items.map((item) => (
           <button
             type='button'
-            className='inline-flex flex-col gap-y-2 items-center justify-center px-5 hover:bg-gray-50'>
-            <item.Icon className='w-6 fill-primary-blue text-xl' />
-            <span className='text-sm text-primary-blue group-hover:text-primary-blue'>
+            className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
+            key={item.id}>
+            <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
+            <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
               {item.title}
             </span>
           </button>
