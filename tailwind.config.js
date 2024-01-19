@@ -7,6 +7,7 @@ module.exports = {
         "text-0": "#000",
         "text-100": "#969696",
         "text-200": "#54595f",
+        "text-300": "#7a7a7a",
         "text-700": "#3B3B3B",
         "primary-blue": "#124FC9",
         "light-primary-blue": "#3296C9",
@@ -18,6 +19,7 @@ module.exports = {
         "rounded-md": "5px",
       },
       fontSize: {
+        sm: "14.4px",
         "3xl": "29px",
       },
     },

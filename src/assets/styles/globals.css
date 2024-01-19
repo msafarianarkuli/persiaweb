@@ -47,4 +47,8 @@ body {
   .ouline-white-button {
     @apply flex items-center gap-x-2 cursor-pointer px-5 py-1.5 border border-white rounded hover:border-gray-300 transition ease-in-out duration-500;
   }
+
+  .custom-transition {
+    @apply transition ease-in-out duration-500;
+  }
 }
