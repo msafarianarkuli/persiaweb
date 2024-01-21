@@ -1,12 +1,12 @@
-import Link from "next/link";
-
 function LeftSide() {
   return (
     <span className='flex justify-center'>
       طراحی توسط{" "}
-      <Link href='/'>
+      <a
+        href='http://persiaweb.net/'
+        className='hover:text-text-100 custom-transition'>
         {"\u00A0"}پرشیا وب{"\u00A0"}
-      </Link>
+      </a>
     </span>
   );
 }
