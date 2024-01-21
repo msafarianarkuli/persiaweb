@@ -21,6 +21,18 @@ const jobs = [
   { id: 4, title: "کرمانشاه" },
   { id: 5, title: "مشهد" },
   { id: 6, title: "مازندران" },
+  { id: 1, title: "اصفهان" },
+  { id: 2, title: "گیلان" },
+  { id: 3, title: "فارس" },
+  { id: 4, title: "کرمانشاه" },
+  { id: 5, title: "مشهد" },
+  { id: 6, title: "مازندران" },
+  { id: 1, title: "اصفهان" },
+  { id: 2, title: "گیلان" },
+  { id: 3, title: "فارس" },
+  { id: 4, title: "کرمانشاه" },
+  { id: 5, title: "مشهد" },
+  { id: 6, title: "مازندران" },
 ];
 
 function RightSide() {

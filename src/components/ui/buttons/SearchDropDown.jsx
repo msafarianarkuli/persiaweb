@@ -33,7 +33,7 @@ function SearchDropDown({ title, Icon, width, items }) {
       </button>
       {open ? (
         <div
-          className={`z-10 absolute top-11 bg-white rounded-lg shadow w-[${width}px]`}>
+          className={`z-10 absolute top-11 bg-white rounded-lg shadow scroll-smooth	 w-[${width}px]`}>
           <div className='p-3'>
             <div className='relative'>
               <div className='absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none'>
