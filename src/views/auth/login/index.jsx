@@ -5,7 +5,7 @@ import LoginForm from "./components/LoginForm";
 
 function Login() {
   return (
-    <Container className='bg-white my-6 text-center'>
+    <Container className='bg-white mt-32 text-center'>
       <div className='max-w-sm mx-auto'>
         <H1>ورود به جاب</H1>
         <p className='text-text-100 mt-6 mb-10'>
