@@ -1,14 +1,18 @@
 import Container from "@/components/ui/containers/Container";
 import ResumeDetail from "./components/ResumeDetail";
 import ResumeList from "./components/ResumeList";
+import Pagination from "@/components/ui/pagination/pagination";
 
 function ResumesReceived() {
   return (
     <Container className='bg-white my-6'>
       <div className='grid grid-cols-3 gap-x-6'>
-        <Container className='bg-bg-100 col-span-3 lg:col-span-1 pt-0'>
-          <ResumeList />
-        </Container>
+        <div>
+          <Container className='bg-bg-100 col-span-3 lg:col-span-1 pt-0'>
+            <ResumeList />
+          </Container>
+          <Pagination />
+        </div>
         <Container className='bg-bg-100 col-span-2 hidden lg:block'>
           <ResumeDetail />
         </Container>
