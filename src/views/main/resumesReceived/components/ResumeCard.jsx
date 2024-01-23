@@ -1,10 +1,10 @@
-function ResumeCard({ title }) {
+function ResumeCard({ title, last, onOpen }) {
   return (
-    <div className='text-text-300 cursor-pointer group'>
+    <div className='text-text-300 cursor-pointer group' onClick={onOpen}>
       <p className='py-4 text-sm group-hover:text-primary-blue custom-transition'>
         {title}
       </p>
-      <hr className='border-text-100' />
+      {!last && <hr className='border-text-100' />}
     </div>
   );
 }

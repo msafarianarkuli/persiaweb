@@ -10,7 +10,7 @@ function Login() {
         <H1>ورود به جاب</H1>
         <p className='text-text-100 mt-6 mb-10'>
           با ورود به جاب{" "}
-          <Link href='' className='text-primary-blue'>
+          <Link href='/rules' className='text-primary-blue'>
             قوانین و مقررات
           </Link>{" "}
           سایت را می پذیرید

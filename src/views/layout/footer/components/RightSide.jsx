@@ -6,7 +6,7 @@ function RightSide() {
       <Link href='/' className='hover:text-text-100 custom-transition'>
         صفحه اصلی
       </Link>
-      <Link href='/' className='hover:text-text-100 custom-transition'>
+      <Link href='/rules' className='hover:text-text-100 custom-transition'>
         قوانین و مقررات
       </Link>
       <Link href='/' className='hover:text-text-100 custom-transition'>

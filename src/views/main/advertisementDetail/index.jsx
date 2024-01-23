@@ -13,7 +13,7 @@ function AdvertisementDetail() {
           <p className='text-xl text-[#033598]'>کارخانه عباس آبادی</p>
         </div>
         <div className='w-full flex justify-center items-center'>
-          <Image src={image} alt='' />
+          <Image src={image} alt='' priority />
         </div>
       </div>
       <div>

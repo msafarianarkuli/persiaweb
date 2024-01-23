@@ -39,7 +39,7 @@ const jobs = [
 function RightSide() {
   return (
     <div className='flex justify-between w-full lg:w-auto gap-x-2'>
-      <Image src={logo} alt='' width={60} />
+      <Image src={logo} alt='' width={60} priority />
       <div className='hidden lg:flex gap-x-2'>
         <SearchDropDown
           title='همه جا'

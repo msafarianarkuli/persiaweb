@@ -1,15 +1,17 @@
-import H3 from "@/components/ui/heading/H3";
-import H4 from "@/components/ui/heading/H4";
+import { MdOutlineClose } from "react-icons/md";
 
-function ResumeDetail() {
+function ResumeDetailMobile({ onClose }) {
   return (
     <>
+      <div className='flex justify-between mb-2'>
+        <p className='text-primary-blue'>دانلود در PDF</p>
+        <MdOutlineClose className='text-xl cursor-pointer' onClick={onClose} />
+      </div>
       <div className='flex justify-between'>
-        <p className='text-primary-blue'>
+        <p className='text-primary-blue text-sm'>
           اطلاعات رزومه محمدعلی زبردست | استخدام کارشناس برق صنعتی و حفاظت
           گیاهانیانی
         </p>
-        <p className='text-primary-blue'>دانلود در PDF</p>
       </div>
       <div className='p-8 text-text-300'>
         <ul className='list-disc'>
@@ -76,4 +78,4 @@ function ResumeDetail() {
   );
 }
 
-export default ResumeDetail;
+export default ResumeDetailMobile;

@@ -18,7 +18,7 @@ const items = [
 
 function BottomNavigation(props) {
   return (
-    <div className='lg:hidden fixed bottom-0 left-0 z-50 w-full bg-white border-t border-gray-200 py-2'>
+    <div className='lg:hidden fixed bottom-0 left-0 z-30 w-full bg-white border-t border-gray-200 py-2'>
       <div className='flex flex-wrap gap-y-4 justify-between'>
         {items.map((item) => (
           <Link
