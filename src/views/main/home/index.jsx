@@ -1,11 +1,11 @@
-import H1 from "@/components/ui/heading/H1";
+import H3 from "@/components/ui/heading/H3";
 import Container from "./components/Container";
 import { ads } from "@/utils/fakeData";
 
 const Home = () => {
   return (
     <main>
-      <H1>آگهی‌های شغلی استخدام و کاریابی</H1>
+      <H3 className='mt-6 ms-2'>آگهی‌های شغلی استخدام و کاریابی</H3>
       <Container items={ads} />
     </main>
   );
