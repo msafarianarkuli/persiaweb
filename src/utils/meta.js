@@ -11,6 +11,6 @@ export const meta = {
   adRegistration: { title: "ثبت آگهی", description: "ثبت آگهی" },
   myads: { title: "آگهی های من", description: "آگهی های من" },
   myResume: { title: "رزومه من", description: "رزومه من" },
-  // : { title: "", description: "" },
+  bookmarks: { title: "نشان شده ها", description: "نشان شده ها" },
   // : { title: "", description: "" },
 };

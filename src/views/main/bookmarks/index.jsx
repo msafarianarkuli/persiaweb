@@ -5,7 +5,7 @@ import { ads } from "@/utils/fakeData";
 function Bookmarks() {
   return (
     <main>
-      <H1 className='mt-6'>نشان شده ها</H1>
+      <H1 className='mt-6 ms-2'>نشان شده ها</H1>
       <Container items={ads} />
     </main>
   );
