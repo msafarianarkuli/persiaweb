@@ -1,7 +1,7 @@
 function Container({ children }) {
   return (
-    <header>
-      <nav className='bg-white shadow-[0px_0px_53px_-24px_rgba(0,0,0,0.5)] text-xs text-text-200'>
+    <header className='relative z-50 shadow-[0px_0px_65px_-22px_rgba(0,0,0,0.5)] md:shadow-none'>
+      <nav className='bg-white text-xs text-text-200'>
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
           {children}
         </div>
@@ -11,3 +11,4 @@ function Container({ children }) {
 }
 
 export default Container;
+// className='shadow-[0px_0px_65px_-22px_rgba(0,0,0,0.5)]'

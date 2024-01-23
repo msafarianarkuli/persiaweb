@@ -1,3 +1,8 @@
 export const meta = {
-  layout: { title: "Jobs", description: "سایت انتشار آگهی" },
+  layout: { title: "انتشار آگهی", description: "سایت انتشار آگهی" },
+  main: { title: "صفحه اصلی", description: "صفحه اصلی" },
+  profile: { title: "پروفایل من", description: "پروفایل من" },
+  // : { title: "", description: "" },
+  // : { title: "", description: "" },
+  // : { title: "", description: "" },
 };

@@ -4,7 +4,7 @@ import Container from "./components/Container";
 
 function Footer() {
   return (
-    <Container>
+    <Container className=''>
       <RightSide />
       <LeftSide />
     </Container>
