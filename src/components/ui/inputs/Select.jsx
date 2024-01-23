@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useField, useFormikContext } from "formik";
+import { FaCaretDown } from "react-icons/fa";
 
 const MultipleInput = ({
   data,
@@ -70,8 +71,9 @@ const MultipleInput = ({
         {!Icon ? null : <Icon className='w-6 fill-[#bbb]' />}
         <button
           type='button'
-          className={`w-40 h-8 text-start outline-none indent-3 focus:bg-white focus:text-text-100 duration-500 ${className}`}>
+          className={`w-full h-8 flex justify-between items-center text-start outline-none indent-3 focus:bg-white focus:text-text-100 duration-500 ${className}`}>
           {text}
+          <FaCaretDown />
         </button>
       </div>
 

@@ -8,7 +8,7 @@ export const meta = {
   },
   login: { title: "ورود", description: "ورود" },
   rules: { title: "قوانین و مقررات", description: "قوانین و مقررات" },
-  // : { title: "", description: "" },
+  adRegistration: { title: "ثبت آگهی", description: "ثبت آگهی" },
   // : { title: "", description: "" },
   // : { title: "", description: "" },
 };

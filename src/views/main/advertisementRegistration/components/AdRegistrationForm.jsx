@@ -81,10 +81,10 @@ function AdRegistrationForm() {
             </div>
           </div>
           <div className='grid grid-cols-1 gap-6 mt-6'>
-            <div className='flex'>
+            <div className='lg:flex'>
               <span className='me-4'>میزان تحصیلات مورد نیاز</span>
               {education.map((opt, index) => (
-                <Radio
+                <Checkbox
                   label={opt.label}
                   key={index}
                   name='education'
@@ -94,7 +94,7 @@ function AdRegistrationForm() {
             </div>
           </div>
           <div className='grid grid-cols-1 gap-6 mt-6'>
-            <div className='flex'>
+            <div className='lg:flex'>
               <span className='me-4'>مزایا</span>
               {Advantages.map((opt, index) => (
                 <Checkbox
