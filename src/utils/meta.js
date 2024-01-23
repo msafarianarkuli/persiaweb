@@ -9,6 +9,8 @@ export const meta = {
   login: { title: "ورود", description: "ورود" },
   rules: { title: "قوانین و مقررات", description: "قوانین و مقررات" },
   adRegistration: { title: "ثبت آگهی", description: "ثبت آگهی" },
+  myads: { title: "آگهی های من", description: "آگهی های من" },
+  myResume: { title: "رزومه من", description: "رزومه من" },
   // : { title: "", description: "" },
   // : { title: "", description: "" },
 };

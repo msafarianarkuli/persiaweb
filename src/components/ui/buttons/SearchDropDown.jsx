@@ -50,7 +50,7 @@ function SearchDropDown({ title, Icon, width, items }) {
             {items.map((item) => (
               <li key={item.id}>
                 <div className='flex items-center ps-2 rounded hover:bg-gray-100 cursor-pointer'>
-                  <span className='w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded'>
+                  <span className='w-full py-2 ms-2 text-sm font-medium text-text-300 rounded'>
                     {item.title}
                   </span>
                 </div>
