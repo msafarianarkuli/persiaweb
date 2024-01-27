@@ -1,9 +1,11 @@
 import { meta } from "@/utils/meta";
 import "@/assets/styles/globals.css";
+import Head from "next/head";
 
 export const metadata = {
   title: meta.layout.title,
   description: meta.layout.description,
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { FaUser } from "react-icons/fa";
 
@@ -20,9 +21,10 @@ const Upload = () => {
   return (
     <div className='flex flex-col items-center gap-y-4 text-center'>
       {selectedImage ? (
-        <img
+        <Image
           src={URL.createObjectURL(selectedImage)}
           alt='Profile Picture'
+          priority
           className='w-[90px] h-[90px] rounded-full object-cover'
         />
       ) : (
