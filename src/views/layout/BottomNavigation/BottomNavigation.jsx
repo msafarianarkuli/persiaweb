@@ -4,7 +4,7 @@ import { BiSolidBriefcaseAlt2 } from "react-icons/bi";
 import Link from "next/link";
 
 const items = [
-  { id: 1, Icon: FaMapMarkerAlt, title: "همه جا", link: "" },
+  { id: 1, Icon: FaMapMarkerAlt, title: "همه استان ها", link: "" },
   { id: 2, Icon: BiSolidBriefcaseAlt2, title: "همه مشاغل", link: "" },
   {
     id: 3,
