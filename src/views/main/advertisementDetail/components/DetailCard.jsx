@@ -1,7 +1,7 @@
-function DetailCard() {
+function DetailCard({ title }) {
   return (
-    <div>
-      <span>استان اصفهان</span>
+    <div className='bg-[#676EF2] inline rounded px-8 py-4 text-white'>
+      {title}
     </div>
   );
 }
