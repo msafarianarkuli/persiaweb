@@ -1,7 +1,7 @@
 "use client";
 import { Form, Formik } from "formik";
 import Button from "@/components/ui/buttons/Button";
-import Input from "@/components/ui/inputs/Input";
+import Input from "@/components/ui/inputs/input";
 import Select from "@/components/ui/inputs/Select";
 import { Advantages, age, education, english, gender } from "@/utils/constants";
 import Radio from "@/components/ui/inputs/Radio";

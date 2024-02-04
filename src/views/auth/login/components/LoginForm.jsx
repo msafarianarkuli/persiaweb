@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/components/ui/buttons/Button";
-import Input from "@/components/ui/inputs/Input";
+import Input from "@/components/ui/inputs/input";
 import { Form, Formik } from "formik";
 
 function LoginForm() {
