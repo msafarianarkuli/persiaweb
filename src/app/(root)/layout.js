@@ -6,25 +6,25 @@ import OfflinePage from "../offline";
 import { useEffect, useState } from "react";
 
 export default function RootLayout({ children }) {
-  const [isOnline, setIsOnline] = useState(true);
+  // const [isOnline, setIsOnline] = useState(true);
 
-  useEffect(() => {
-    const handleOnlineStatus = () => {
-      setIsOnline(navigator.onLine);
-    };
+  // useEffect(() => {
+  //   const handleOnlineStatus = () => {
+  //     setIsOnline(navigator.onLine);
+  //   };
 
-    window.addEventListener("online", handleOnlineStatus);
-    window.addEventListener("offline", handleOnlineStatus);
+  //   window.addEventListener("online", handleOnlineStatus);
+  //   window.addEventListener("offline", handleOnlineStatus);
 
-    return () => {
-      window.removeEventListener("online", handleOnlineStatus);
-      window.removeEventListener("offline", handleOnlineStatus);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("online", handleOnlineStatus);
+  //     window.removeEventListener("offline", handleOnlineStatus);
+  //   };
+  // }, []);
 
-  if (!isOnline) {
-    return <OfflinePage />;
-  }
+  // if (!isOnline) {
+  //   return <OfflinePage />;
+  // }
   return (
     <>
       <ConnectionCheck />
