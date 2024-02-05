@@ -42,7 +42,7 @@ function RightSide() {
       <Image src={logo} alt='' width={60} priority />
       <div className='hidden lg:flex gap-x-2'>
         <SearchDropDown
-          title='همه استان ها'
+          title='همه استان‌ها'
           Icon={FaMapMarkerAlt}
           width={140}
           items={locations}

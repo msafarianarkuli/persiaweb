@@ -25,7 +25,7 @@ function LeftSide() {
               : ""
           }`}>
           <AiOutlineIdcard className='text-lg' />
-          رزومه های دریافتی
+          رزومه‌های دریافتی
         </Link>
         {notif && (
           <span className='flex justify-center items-center absolute -top-2 -right-2 bg-red-500 text-white w-[20px] h-[20px] rounded-full'>

@@ -34,7 +34,7 @@ export const education = [
   { value: 1, label: "دیپلم" },
   { value: 2, label: "کاردانی" },
   { value: 3, label: "کارشناسی" },
-  { value: 4, label: "کارشناسی ارشد" },
+  { value: 4, label: "کارشناسی‌ارشد" },
   { value: 5, label: "دکتری" },
 ];
 
@@ -55,5 +55,5 @@ export const Advantages = [
   { value: 1, label: "نهار" },
   { value: 2, label: "هدایا مناسبتی" },
   { value: 3, label: "بیمه تکمیلی" },
-  { value: 3, label: "حقوق سر موقع" },
+  { value: 3, label: "حقوق سر‌‌موقع" },
 ];

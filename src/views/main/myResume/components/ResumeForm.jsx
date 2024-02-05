@@ -29,7 +29,7 @@ function ResumeForm() {
             name='name'
             id='name'
             top={true}
-            label='نام و نام خانوادگی'
+            label='نام و نام‌خانوادگی'
           />
           <Input
             type='text'
@@ -92,7 +92,7 @@ function ResumeForm() {
             name='skills'
             id='skills'
             top={true}
-            label='مهارت ها'
+            label='مهارت‌ها'
           />
           <Textarea
             type='text'

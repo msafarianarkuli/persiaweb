@@ -14,7 +14,7 @@ function ResumeDetail() {
       <div className='p-8 text-text-300'>
         <ul className='list-disc'>
           <li>
-            <span className='font-medium'>نام و نام خانوادگی:</span>
+            <span className='font-medium'>نام و نام‌خانوادگی:</span>
             {"\u00A0"}
             <span className='font-light'>محمدعلی زبردست</span>
           </li>
@@ -61,7 +61,7 @@ function ResumeDetail() {
             </span>
           </li>
         </ul>
-        <p className='font-medium mt-6'>مهارت های این شخص:</p>
+        <p className='font-medium mt-6'>مهارت‌های این شخص:</p>
         <p className='font-light'>کار با ابزار</p>
         <p className='font-light'>خیاطی</p>
         <p className='font-light'>خیاطی</p>

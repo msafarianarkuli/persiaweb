@@ -9,7 +9,7 @@ import Modal from "@/components/ui/modal/Modal";
 import FooterModal from "./components/FooterModal";
 
 const items = [
-  { id: 1, Icon: FaMapMarkerAlt, title: "همه استان ها", link: "" },
+  { id: 1, Icon: FaMapMarkerAlt, title: "همه استان‌ها", link: "" },
   { id: 2, Icon: BiSolidBriefcaseAlt2, title: "همه مشاغل", link: "" },
   {
     id: 3,
@@ -17,7 +17,7 @@ const items = [
     title: "ثبت آگهی",
     link: "advertisement-registration",
   },
-  { id: 4, Icon: FaRegIdCard, title: "رزومه ها", link: "resumes-received" },
+  { id: 4, Icon: FaRegIdCard, title: "رزومه‌ها", link: "resumes-received" },
   { id: 5, Icon: FaUser, title: "پروفایل من", link: "profile" },
 ];
 
