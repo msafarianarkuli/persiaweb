@@ -4,11 +4,9 @@ import Button from "@/components/ui/buttons/Button";
 import Input from "@/components/ui/inputs/input";
 import Select from "@/components/ui/inputs/Select";
 import { Advantages, age, education, english, gender } from "@/utils/constants";
-import Radio from "@/components/ui/inputs/Radio";
 import Textarea from "@/components/ui/inputs/Textarea";
 import Checkbox from "@/components/ui/inputs/Checkbox";
 import Upload from "@/components/ui/picture/Upload";
-import { adRegistrationSchema } from "@/utils/validations/validationSchema";
 
 function AdRegistrationForm() {
   const initialValues = {
@@ -25,7 +23,6 @@ function AdRegistrationForm() {
       <Upload />
       <Formik
         initialValues={initialValues}
-        validationSchema={adRegistrationSchema}
         onSubmit={(values) => console.log(values)}>
         <Form>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6'>
