@@ -39,10 +39,10 @@ function BottomNavigation() {
         <div className='lg:hidden z-30 w-full bg-white border-t border-gray-200 py-2'>
           <div className='flex flex-wrap gap-y-4 justify-between'>
             {items.map((item) =>
-              modalInfo.modalId === 1 || modalInfo.modalId === 2 ? (
+              item.id === 1 || item.id === 2 ? (
                 <div
                   onClick={() => handleOpenModal(item.id)}
-                  className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
+                  className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group cursor-pointer'
                   key={item.id}>
                   <div>
                     <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
