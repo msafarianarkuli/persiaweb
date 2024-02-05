@@ -38,20 +38,33 @@ function BottomNavigation() {
         <Footer />
         <div className='lg:hidden z-30 w-full bg-white border-t border-gray-200 py-2'>
           <div className='flex flex-wrap gap-y-4 justify-between'>
-            {items.map((item) => (
-              <Link
-                href={item.link}
-                onClick={() => handleOpenModal(item.id)}
-                className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
-                key={item.id}>
-                <div>
-                  <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
-                  <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
-                    {item.title}
-                  </span>
+            {items.map((item) =>
+              modalInfo.modalId === 1 || modalInfo.modalId === 2 ? (
+                <div
+                  onClick={() => handleOpenModal(item.id)}
+                  className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
+                  key={item.id}>
+                  <div>
+                    <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
+                    <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
+                      {item.title}
+                    </span>
+                  </div>
                 </div>
-              </Link>
-            ))}
+              ) : (
+                <Link
+                  href={item.link}
+                  className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
+                  key={item.id}>
+                  <div>
+                    <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
+                    <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
+                      {item.title}
+                    </span>
+                  </div>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </div>
