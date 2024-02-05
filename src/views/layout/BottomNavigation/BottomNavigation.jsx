@@ -34,38 +34,36 @@ function BottomNavigation() {
 
   return (
     <>
-      <div className='fixed w-full bottom-0 left-0'>
-        <Footer />
-        <div className='lg:hidden z-30 w-full bg-white border-t border-gray-200 py-2'>
-          <div className='flex flex-wrap gap-y-4 justify-between'>
-            {items.map((item) =>
-              item.id === 1 || item.id === 2 ? (
-                <div
-                  onClick={() => handleOpenModal(item.id)}
-                  className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group cursor-pointer'
-                  key={item.id}>
-                  <div>
-                    <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
-                    <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
-                      {item.title}
-                    </span>
-                  </div>
+      <Footer />
+      <div className='fixed bottom-0 left-0 lg:hidden z-30 w-full bg-white border-t border-gray-200 py-2'>
+        <div className='flex flex-wrap gap-y-4 justify-between'>
+          {items.map((item) =>
+            item.id === 1 || item.id === 2 ? (
+              <div
+                onClick={() => handleOpenModal(item.id)}
+                className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group cursor-pointer'
+                key={item.id}>
+                <div className='flex flex-col justify-center items-center gap-y-1'>
+                  <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
+                  <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
+                    {item.title}
+                  </span>
                 </div>
-              ) : (
-                <Link
-                  href={item.link}
-                  className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
-                  key={item.id}>
-                  <div>
-                    <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
-                    <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
-                      {item.title}
-                    </span>
-                  </div>
-                </Link>
-              )
-            )}
-          </div>
+              </div>
+            ) : (
+              <Link
+                href={item.link}
+                className='flex flex-col gap-y-2 items-center justify-center px-2 sm:px-5 group'
+                key={item.id}>
+                <div className='flex flex-col justify-center items-center gap-y-1'>
+                  <item.Icon className='w-6 fill-primary-blue text-xl group-hover:fill-light-primary-blue' />
+                  <span className='text-[12px] sm:text-sm text-primary-blue group-hover:text-light-primary-blue'>
+                    {item.title}
+                  </span>
+                </div>
+              </Link>
+            )
+          )}
         </div>
       </div>
       {modalInfo.showModal &&

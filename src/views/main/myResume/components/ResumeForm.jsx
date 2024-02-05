@@ -39,7 +39,7 @@ function ResumeForm() {
             label='شماره موبایل'
           />
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-6'>
           <Input type='text' name='age' id='age' top={true} label='سن' />
           <Select
             label='جنسیت'

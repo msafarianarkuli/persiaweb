@@ -7,8 +7,10 @@ import { Advantages, age, education, english, gender } from "@/utils/constants";
 import Textarea from "@/components/ui/inputs/Textarea";
 import Checkbox from "@/components/ui/inputs/Checkbox";
 import Upload from "@/components/ui/picture/Upload";
+import { useState } from "react";
 
 function AdRegistrationForm() {
+  const [isWoman, setIsWoman] = useState(false);
   const initialValues = {
     industy: "",
     age: "",
@@ -18,12 +20,18 @@ function AdRegistrationForm() {
     address: "",
   };
 
+  const onSubmit = (values) => {
+    console.log(values);
+  };
+
+  console.log(isWoman);
+
   return (
-    <>
+    <div className='md:px-[170px]'>
       <Upload />
       <Formik
         initialValues={initialValues}
-        onSubmit={(values) => console.log(values)}>
+        onSubmit={(values) => onSubmit(values)}>
         <Form>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6'>
             <Select
@@ -113,7 +121,7 @@ function AdRegistrationForm() {
           </Button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 }
 

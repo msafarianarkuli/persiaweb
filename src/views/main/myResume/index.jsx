@@ -5,7 +5,7 @@ import Container from "@/components/ui/containers/Container";
 
 function MyResume() {
   return (
-    <Container className='bg-white my-6 text-center'>
+    <Container className='bg-white my-6 text-center md:px-[170px]'>
       <H1>رزومه من</H1>
       <H4>برای آگهی استخدام مهندس برق شرکت ایکس وای زد</H4>
       <ResumeForm />
