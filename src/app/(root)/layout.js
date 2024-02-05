@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
     <>
       <ConnectionCheck />
       <Header />
-      <div className='md:p-2 sm:p-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto mb-[250px]'>
+      <div className='md:p-2 sm:p-0 mt-16 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto mb-[250px]'>
         {children}
       </div>
       <BottomNavigation />
