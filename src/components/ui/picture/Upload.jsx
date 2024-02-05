@@ -25,6 +25,8 @@ const Upload = () => {
           src={URL.createObjectURL(selectedImage)}
           alt='Profile Picture'
           priority
+          width={90}
+          height={90}
           className='w-[90px] h-[90px] rounded-full object-cover'
         />
       ) : (
@@ -40,9 +42,9 @@ const Upload = () => {
         className='text-sm/4 text-text-300 cursor-pointer'
         onClick={handleRemoveProfile}>
         {selectedImage ? (
-          <span className='text-red-400'>Remove Profile Picture</span>
+          <span className='text-red-400'>حذف لوگو شرکت</span>
         ) : (
-          <span>Profile Picture (Optional)</span>
+          <span>لوگو شرکت</span>
         )}
       </h4>
       <input
