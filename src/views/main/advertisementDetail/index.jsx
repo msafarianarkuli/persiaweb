@@ -6,7 +6,7 @@ import SimilarAds from "./components/SimilarAds";
 
 function AdvertisementDetail() {
   return (
-    <Container className='bg-white my-6 px-28'>
+    <Container className='bg-white my-6 md:px-28'>
       <AdSummary />
       <CardContainer className='mt-8 mb-16' />
       <AdActions />
