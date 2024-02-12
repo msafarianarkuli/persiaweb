@@ -117,7 +117,7 @@ function AdRegistrationForm() {
           <Button
             type='submit'
             className='bg-primary-green text-white mt-4 mb-8'>
-            ارسال رزومه
+            ثبت آگهی
           </Button>
         </Form>
       </Formik>
