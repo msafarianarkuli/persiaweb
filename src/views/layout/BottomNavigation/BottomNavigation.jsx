@@ -7,6 +7,8 @@ import { BiSolidBriefcaseAlt2 } from "react-icons/bi";
 import Footer from "../footer";
 import Modal from "@/components/ui/modal/Modal";
 import FooterModal from "./components/FooterModal";
+import { usePathname } from "next/navigation";
+import Button from "@/components/ui/buttons/Button";
 
 const items = [
   { id: 1, Icon: FaMapMarkerAlt, title: "همه استان‌ها", link: "" },
@@ -22,7 +24,14 @@ const items = [
 ];
 
 function BottomNavigation() {
+  const asPath = usePathname();
   const [modalInfo, setModalInfo] = useState({ showModal: false, modalId: 0 });
+
+  const routeDevide = asPath.split("/");
+  const RemoveBottomNavigation =
+    routeDevide[1] === "advertisements" &&
+    Boolean(routeDevide[2]) &&
+    window.innerWidth < 600;
 
   const handleOpenModal = (id) => {
     setModalInfo({ showModal: true, modalId: id });
@@ -31,6 +40,16 @@ function BottomNavigation() {
   const handleCloseModal = () => {
     setModalInfo({ showModal: false, modalId: 0 });
   };
+
+  if (RemoveBottomNavigation) {
+    return (
+      <div className='fixed bottom-0 left-0 lg:hidden z-30 w-full bg-white border-t border-gray-200 py-2 px-4'>
+        <Button type='button' className='bg-primary-green text-white my-2'>
+          ارسال رزومه
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <>
