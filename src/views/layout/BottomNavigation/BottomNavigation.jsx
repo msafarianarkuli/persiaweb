@@ -9,6 +9,7 @@ import Modal from "@/components/ui/modal/Modal";
 import FooterModal from "./components/FooterModal";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/buttons/Button";
+import useDeviceWidth from "@/hooks/useDeviceWidth";
 
 const items = [
   { id: 1, Icon: FaMapMarkerAlt, title: "همه استان‌ها", link: "" },
@@ -27,11 +28,11 @@ function BottomNavigation() {
   const asPath = usePathname();
   const [modalInfo, setModalInfo] = useState({ showModal: false, modalId: 0 });
 
+  const isMobile = useDeviceWidth() < 600;
+
   const routeDevide = asPath.split("/");
-  const RemoveBottomNavigation =
-    routeDevide[1] === "advertisements" &&
-    Boolean(routeDevide[2]) &&
-    window.innerWidth < 600;
+  const isBottomNavigation =
+    routeDevide[1] === "advertisements" && Boolean(routeDevide[2]);
 
   const handleOpenModal = (id) => {
     setModalInfo({ showModal: true, modalId: id });
@@ -41,7 +42,7 @@ function BottomNavigation() {
     setModalInfo({ showModal: false, modalId: 0 });
   };
 
-  if (RemoveBottomNavigation) {
+  if (isBottomNavigation && isMobile) {
     return (
       <div className='fixed bottom-0 left-0 lg:hidden z-30 w-full bg-white border-t border-gray-200 py-2 px-4'>
         <Button type='button' className='bg-primary-green text-white my-2'>
