@@ -35,6 +35,29 @@ body {
   font-family: "Dana", Arial, sans-serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey; */
+  background-color: rgb(240, 237, 237);
+  /* border-radius: 4px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 181, 181);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1255cb;
+}
+
 @layer base {
   .primary-button {
     @apply transition-all duration-500 ease-in-out px-5 py-2.5 flex items-center rounded gap-x-2 text-white bg-primary-blue hover:text-primary-blue hover:bg-bg-200;
