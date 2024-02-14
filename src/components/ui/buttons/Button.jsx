@@ -1,6 +1,6 @@
 const Button = ({ children, className, ...other }) => {
   return (
-    <button className={`rounded w-full py-2 ${className}`} {...other}>
+    <button className={`rounded py-1 px-4 ${className}`} {...other}>
       {children}
     </button>
   );
