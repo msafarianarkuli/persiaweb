@@ -35,24 +35,6 @@ body {
   font-family: "Dana", Arial, sans-serif;
 }
 
-/* Customize the scrollbar
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #da4242 !important;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #ea1e1e;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #f60f0f;
-} */
-
 @layer base {
   .primary-button {
     @apply transition-all duration-500 ease-in-out px-5 py-2.5 flex items-center rounded gap-x-2 text-white bg-primary-blue hover:text-primary-blue hover:bg-bg-200;

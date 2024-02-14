@@ -5,8 +5,11 @@ import Input from "@/components/ui/inputs/input";
 import Textarea from "@/components/ui/inputs/Textarea";
 import Select from "@/components/ui/inputs/Select";
 import { age, education, english, gender } from "@/utils/constants";
+import { useState } from "react";
 
 function ResumeForm() {
+  const [Gender, setGender] = useState(0);
+
   const initialValues = {
     name: "",
     phone: "",
@@ -17,6 +20,10 @@ function ResumeForm() {
     skills: "",
     experience: "",
     address: "",
+  };
+
+  const handleSelectOnChange = (value) => {
+    setGender(value);
   };
   return (
     <Formik
@@ -47,6 +54,7 @@ function ResumeForm() {
             id='gender'
             name='gender'
             defaultValue={gender?.[0]}
+            onClick={(value) => handleSelectOnChange(value)}
           />
           <Input
             type='text'
@@ -62,13 +70,15 @@ function ResumeForm() {
             name='education'
             defaultValue={education?.[0]}
           />
-          <Select
-            label='وضعیت نظام وظیفه'
-            data={age}
-            id='status'
-            name='status'
-            defaultValue={age?.[0]}
-          />
+          {!Gender && (
+            <Select
+              label='وضعیت نظام وظیفه'
+              data={age}
+              id='status'
+              name='status'
+              defaultValue={age?.[0]}
+            />
+          )}
         </div>
         <div className='grid grid-cols-1پ lg:grid-cols-2 gap-6 mt-6'>
           <Select

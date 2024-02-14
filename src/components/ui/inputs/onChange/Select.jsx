@@ -47,7 +47,7 @@ const Select = ({
     if (open !== false) {
       setText(label);
       setFieldValue(field.name, String(value));
-      onClick ? onClick(value) : null;
+      onClick();
     }
   };
 

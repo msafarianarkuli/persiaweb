@@ -1,6 +1,5 @@
 import H1 from "@/components/ui/heading/H1";
 import ResumeForm from "./components/ResumeForm";
-import H4 from "@/components/ui/heading/H4";
 import Container from "@/components/ui/containers/Container";
 
 function MyResume() {
