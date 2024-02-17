@@ -23,7 +23,6 @@ const useInstallPrompt = () => {
   const promptInstall = () => {
     if (deferredPrompt) {
       deferredPrompt.prompt();
-      console.log(deferredPrompt, "hhh");
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
           console.log("User accepted the A2HS prompt");
