@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 function AdCard({ item, bg = "bg-white" }) {
   const asPath = usePathname();
-  console.log(asPath);
   const { title, description } = item;
   return (
     <Link
