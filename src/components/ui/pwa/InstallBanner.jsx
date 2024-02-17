@@ -4,29 +4,25 @@ import cookieCutter from "cookie-cutter";
 import useInstallPrompt from "@/hooks/useInstallPrompt";
 import Modal from "../modal/Modal";
 import Button from "../buttons/Button";
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 function InstallBanner() {
-  const router = useRouter();
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const { deferredPrompt, promptInstall } = useInstallPrompt();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true);
+    }, 10000);
+  }, []);
 
   const handleCloseModal = () => {
     setShowModal(false);
-    cookieCutter.set(
-      "installApp",
-      "NO"
-      // , { expires: new Date(0) } // aftre one week
-    );
+    cookieCutter.set("installApp", "NO");
   };
 
   const handleCancelInstalling = () => {
-    cookieCutter.set(
-      "installApp",
-      "NO"
-      // , { expires: new Date(0) }  //after two month
-    );
-    router.refresh();
+    cookieCutter.set("installApp", "NO");
     handleCloseModal();
   };
 
