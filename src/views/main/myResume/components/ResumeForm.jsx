@@ -122,7 +122,7 @@ function ResumeForm() {
           />
         </div>
         <Button type='submit' className='bg-primary-green text-white mt-4'>
-          ارسال رزومه
+          ثبت رزومه
         </Button>
       </Form>
     </Formik>
