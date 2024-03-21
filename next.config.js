@@ -13,7 +13,14 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ... other options you like
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ja.p65.ir",
+      },
+    ],
+  },
 };
 
 module.exports = withPWA(nextConfig);

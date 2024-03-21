@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
-function SearchDropDown({ title, Icon, width, items }) {
+function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
   const dropdownRef = useRef(null);
   const [open, setOpen] = useState(false);
 
@@ -21,6 +21,11 @@ function SearchDropDown({ title, Icon, width, items }) {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  const handleClickItem = (title) => {
+    setOpen(false);
+    onClick(title);
+  };
 
   return (
     <div className='relative' ref={dropdownRef}>
@@ -43,14 +48,15 @@ function SearchDropDown({ title, Icon, width, items }) {
                 type='text'
                 className='block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 outline-none placeholder:text-[10px]'
                 placeholder='جست‌وجوی...'
+                onChange={onChange}
               />
             </div>
           </div>
-          <ul className='h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700'>
-            {items.map((item) => (
-              <li key={item.id}>
+          <ul className='max-h-48 px-3 pb-3 overflow-y-auto text-xs text-gray-700'>
+            {items?.map((item) => (
+              <li key={item.id} onClick={() => handleClickItem(item.title)}>
                 <div className='flex items-center ps-2 rounded hover:bg-gray-100 cursor-pointer'>
-                  <span className='w-full py-2 ms-2 text-sm font-medium text-text-300 rounded'>
+                  <span className='w-full py-2 text-text-300 rounded'>
                     {item.title}
                   </span>
                 </div>

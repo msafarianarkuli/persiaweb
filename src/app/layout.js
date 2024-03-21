@@ -1,5 +1,6 @@
 import { meta } from "@/utils/meta";
 import "@/assets/styles/globals.css";
+import ReactQueryProvider from "./ReactQueryProvider";
 
 export const metadata = {
   title: meta.layout.title,
@@ -10,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='fa'>
-      <body>{children}</body>
+      <body>
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }
