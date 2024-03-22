@@ -1,9 +1,12 @@
+import { useCommonStore } from "@/store/commonStore";
 import { useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
 function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
   const dropdownRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const province = useCommonStore((state) => state.province);
+  const category = useCommonStore((state) => state.category);
 
   const handleClick = () => {
     setOpen(!open);
@@ -30,11 +33,11 @@ function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
   return (
     <div className='relative' ref={dropdownRef}>
       <button
-        className='secondary-button text-primary-blue w-[140px]'
+        className='secondary-button text-primary-blue w-[140px] px-2'
         type='button'
         onClick={handleClick}>
         <Icon className='text-lg' />
-        {title}
+        {title === "provinces" ? province : category}
       </button>
       {open ? (
         <div

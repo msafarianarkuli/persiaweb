@@ -8,13 +8,15 @@ import logo from "@/assets/images/logo-primary.png";
 import useCategories from "@/services/hooks/categories/useCategories";
 import useProvinces from "@/services/hooks/area/useProvinces";
 import { useState } from "react";
+import { useCommonStore } from "@/store/commonStore";
 
 function RightSide() {
   const [provinceSearch, setProvinceSearch] = useState();
   const [categorySearch, setCategorySearch] = useState();
   const { data: categories } = useCategories({ search: categorySearch });
   const { data: provinces } = useProvinces({ search: provinceSearch });
-
+  const setProvince = useCommonStore((state) => state.setProvince);
+  const setCategory = useCommonStore((state) => state.setCategory);
   const inputs = [
     {
       id: 1,
@@ -23,7 +25,7 @@ function RightSide() {
       width: 140,
       items: provinces?.data?.data,
       onChange: (e) => setProvinceSearch(e.target.value),
-      onClick: () => setProvinces("jjj"),
+      onClick: (data) => setProvince(data),
     },
     {
       id: 2,
@@ -32,7 +34,7 @@ function RightSide() {
       width: 140,
       items: categories?.data?.data,
       onChange: (e) => setCategorySearch(e.target.value),
-      onClick: () => setProvinces("kkk"),
+      onClick: (data) => setProvince(data),
     },
   ];
 
