@@ -7,18 +7,18 @@ function LeftSide() {
   const notif = true;
   return (
     <div className='hidden lg:flex gap-x-4 items-center '>
-      <Link href='profile' className='ouline-white-button'>
+      <Link href='/profile' className='ouline-white-button'>
         <FaUser className='text-lg mb-1' />
         پروفایل
       </Link>
       <Link
-        href='advertisement-registration'
+        href='/advertisement-registration'
         className='primary-button font-medium'>
         <FaPlus /> ثبت آگهی
       </Link>
       <div className='relative'>
         <Link
-          href='resumes-received'
+          href='/resumes-received'
           className={`secondary-button font-medium ${
             notif
               ? "border border-red-500 bg-white hover:bg-bg-100 hover:text-text-200"
