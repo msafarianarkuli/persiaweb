@@ -8,7 +8,7 @@ function AdCard({ item, bg = "bg-white" }) {
   const asPath = usePathname();
   return (
     <Link
-      href={`advertisements/${item.id}`}
+      href={`advertisements/${item.slug}`}
       className={`flex p-2 rounded-md gap-x-4 shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] hover:shadow-[0px_0px_9px_0px_rgba(0,0,0,0.5)] custom-transition ${bg}`}>
       <Image
         width={110}

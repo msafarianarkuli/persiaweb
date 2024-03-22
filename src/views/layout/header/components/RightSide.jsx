@@ -25,7 +25,7 @@ function RightSide() {
       width: 140,
       items: provinces?.data?.data,
       onChange: (e) => setProvinceSearch(e.target.value),
-      onClick: (data) => setProvince(data),
+      onClick: (data) => setCategory(data),
     },
     {
       id: 2,

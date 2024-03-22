@@ -1,10 +1,10 @@
 import ActionContainer from "./ActionContainer";
 import AdSituations from "./AdSituations";
 
-function AdActions() {
+function AdActions({ data }) {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 container mx-auto'>
-      <AdSituations />
+      <AdSituations data={data} />
       <ActionContainer />
     </div>
   );
