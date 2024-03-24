@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import cookieCutter from "cookie-cutter";
+import Cookies from "js-cookie";
 import useInstallPrompt from "@/hooks/useInstallPrompt";
 import Modal from "../modal/Modal";
 import Button from "../buttons/Button";
@@ -18,16 +18,16 @@ function InstallBanner() {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    cookieCutter.set("installApp", "NO");
+    Cookies.set("installApp", "NO");
   };
 
   const handleCancelInstalling = () => {
-    cookieCutter.set("installApp", "NO");
+    Cookies.set("installApp", "NO");
     handleCloseModal();
   };
 
   const showBanner =
-    deferredPrompt && showModal && cookieCutter.get("installApp") !== "NO";
+    deferredPrompt && showModal && Cookies.get("installApp") !== "NO";
 
   return showBanner ? (
     <Modal onClose={handleCloseModal}>

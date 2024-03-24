@@ -8,7 +8,7 @@ export const metadata = {
   manifest: "/manifest.json",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, session }) {
   return (
     <html lang='fa'>
       <body>

@@ -1,9 +1,13 @@
+"use client";
 import Container from "@/components/ui/containers/Container";
 import H1 from "@/components/ui/heading/H1";
 import Link from "next/link";
 import LoginForm from "./components/LoginForm";
+import { useSession } from "next-auth/react";
 
 function Login() {
+  const data = useSession();
+  console.log(data);
   return (
     <Container className='bg-white mt-32 text-center'>
       <div className='max-w-sm mx-auto'>
