@@ -4,7 +4,9 @@ import Input from "@/components/ui/inputs/input";
 import { Form, Formik } from "formik";
 import { signIn, useSession } from "next-auth/react";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 function VerifyForm() {
+  const router = useRouter();
   const handleSubmit = async (values) => {
     const body = {
       ...values,
@@ -14,6 +16,7 @@ function VerifyForm() {
       ...body,
       redirect: false,
     });
+    router.push("/");
   };
 
   const data = useSession();

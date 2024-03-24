@@ -2,12 +2,15 @@ import Link from "next/link";
 import { FaPlus, FaUser } from "react-icons/fa";
 import { AiOutlineIdcard } from "react-icons/ai";
 import { LuBellRing } from "react-icons/lu";
+import usePrivateLink from "@/hooks/usePrivateLink";
 
 function LeftSide() {
   const notif = true;
+  const profile = usePrivateLink({ link: "/profile" });
+  const resumes = usePrivateLink({ link: "/resumes-received" });
   return (
     <div className='hidden lg:flex gap-x-4 items-center '>
-      <Link href='/login' className='ouline-white-button'>
+      <Link href={profile} className='ouline-white-button'>
         <FaUser className='text-lg mb-1' />
         پروفایل
       </Link>
@@ -18,7 +21,7 @@ function LeftSide() {
       </Link>
       <div className='relative'>
         <Link
-          href='/resumes-received'
+          href={resumes}
           className={`secondary-button font-medium ${
             notif
               ? "border border-red-500 bg-white hover:bg-bg-100 hover:text-text-200"
