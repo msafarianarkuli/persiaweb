@@ -4,11 +4,11 @@ import Container from "../home/components/Container";
 import { useMyAdvertisements } from "@/services/hooks/advertises/useMyAdvertisements";
 
 function MyAdvertisements() {
-  // const { data } = useMyAdvertisements();  //need authentication
+  const { data } = useMyAdvertisements();
   return (
     <main>
       <H1 className='mt-6'>آگهی‌های من</H1>
-      {/* <Container items={ads} /> */}
+      <Container items={data?.data} />
     </main>
   );
 }
