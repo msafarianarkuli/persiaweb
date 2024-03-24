@@ -20,11 +20,7 @@ function AdRegistrationForm() {
     address: "",
   };
 
-  const onSubmit = (values) => {
-    console.log(values);
-  };
-
-  console.log(isWoman);
+  const onSubmit = (values) => {};
 
   return (
     <div className='md:px-[170px]'>

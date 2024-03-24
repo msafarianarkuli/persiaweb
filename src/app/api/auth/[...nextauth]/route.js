@@ -15,7 +15,6 @@ export const authOptions = {
           code,
           phone,
         };
-        console.log(body);
         try {
           const res = await verify(body);
           const { data } = res;
@@ -25,7 +24,6 @@ export const authOptions = {
             ...data,
           };
         } catch (e) {
-          console.log("error", e);
           let message = e?.data?.message || "";
           throw new Error(message);
         }

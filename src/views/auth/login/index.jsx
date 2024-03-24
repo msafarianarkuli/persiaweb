@@ -7,7 +7,6 @@ import { useSession } from "next-auth/react";
 
 function Login() {
   const data = useSession();
-  console.log(data);
   return (
     <Container className='bg-white mt-32 text-center'>
       <div className='max-w-sm mx-auto'>

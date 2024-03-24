@@ -3,12 +3,24 @@ import { FaBookmark } from "react-icons/fa";
 import { BsFillClipboard2CheckFill } from "react-icons/bs";
 import ActionCard from "./ActionCard";
 import { useRouter } from "next/navigation";
-
-function ActionContainer() {
+import { useMutation } from "@tanstack/react-query";
+import addBookmark from "@/services/api/bookmarks/addBookmark";
+import toast from "react-hot-toast";
+function ActionContainer({ data }) {
   const router = useRouter();
-
+  const { mutate } = useMutation({
+    mutationKey: ["addbookmark"],
+    mutationFn: addBookmark,
+    onSuccess: () => {
+      toast("آگهی با موفقیت نشان شد");
+    },
+  });
   const handleSendResume = () => {
     // router.push("/my-resume");
+  };
+
+  const handleBookmark = () => {
+    mutate({ advertise_id: data.id });
   };
 
   return (
@@ -22,7 +34,7 @@ function ActionContainer() {
       <ActionCard
         Icon={FaBookmark}
         title='نشان کردن'
-        // onClick={handleSendResume}
+        onClick={handleBookmark}
       />
     </div>
   );
