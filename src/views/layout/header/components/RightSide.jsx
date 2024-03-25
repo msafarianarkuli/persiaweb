@@ -17,6 +17,7 @@ function RightSide() {
   const { data: provinces } = useProvinces({ search: provinceSearch });
   const setProvince = useCommonStore((state) => state.setProvince);
   const setCategory = useCommonStore((state) => state.setCategory);
+
   const inputs = [
     {
       id: 1,
@@ -25,7 +26,7 @@ function RightSide() {
       width: 140,
       items: provinces?.data,
       onChange: (e) => setProvinceSearch(e.target.value),
-      onClick: (data) => setCategory(data),
+      onClick: (id, title) => setProvince(id, title),
     },
     {
       id: 2,
@@ -34,7 +35,7 @@ function RightSide() {
       width: 140,
       items: categories?.data,
       onChange: (e) => setCategorySearch(e.target.value),
-      onClick: (data) => setProvince(data),
+      onClick: (id, title) => setCategory(id, title),
     },
   ];
 

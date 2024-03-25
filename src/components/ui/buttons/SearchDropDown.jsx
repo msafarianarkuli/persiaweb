@@ -1,3 +1,4 @@
+import useProvinces from "@/services/hooks/area/useProvinces";
 import { useCommonStore } from "@/store/commonStore";
 import { useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
@@ -25,9 +26,9 @@ function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
     };
   }, []);
 
-  const handleClickItem = (title) => {
+  const handleClickItem = (id, title) => {
     setOpen(false);
-    onClick(title);
+    onClick(id, title);
   };
 
   return (
@@ -37,7 +38,7 @@ function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
         type='button'
         onClick={handleClick}>
         <Icon className='text-lg' />
-        {title === "provinces" ? province : category}
+        {title === "provinces" ? province.title : category.title}
       </button>
       {open ? (
         <div
@@ -57,7 +58,9 @@ function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
           </div>
           <ul className='max-h-48 px-3 pb-3 overflow-y-auto text-xs text-gray-700'>
             {items?.map((item) => (
-              <li key={item.id} onClick={() => handleClickItem(item.title)}>
+              <li
+                key={item.id}
+                onClick={() => handleClickItem(item.id, item.title)}>
                 <div className='flex items-center ps-2 rounded hover:bg-gray-100 cursor-pointer'>
                   <span className='w-full py-2 text-text-300 rounded'>
                     {item.title}
