@@ -10,12 +10,31 @@ function Bookmarks() {
   const { data } = useBookmarks();
   const queryClient = useQueryClient();
 
-  const { mutate, data: bookmark } = useMutation({
+  const { mutate } = useMutation({
     mutationKey: ["deleteBookmark"],
     mutationFn: deleteBookmark,
-    onSuccess: (data) => {
-      queryClient.invalidateQueries("bookmarks");
-      toast(data?.data);
+    onMutate: async (deletedBookmark) => {
+      queryClient.setQueryData(["bookmarks"], (oldData) => {
+        const filteredBookmarks = oldData?.data?.filter(
+          (bookmark) => bookmark.id !== deletedBookmark
+        );
+        return {
+          data: filteredBookmarks,
+        };
+      });
+
+      return deletedBookmark;
+    },
+    onError: (err, deletedBookmark) => {
+      queryClient.setQueryData(["bookmarks"], (oldData) => {
+        const prevBookmarks = queryClient.getQueryData(["bookmarks"]);
+        return prevBookmarks;
+      });
+      toast.error("حذف آگهی نشان شده با مشکل مواجه شد");
+    },
+    onSettled: (deletedBookmark) => {
+      queryClient.invalidateQueries(["bookmarks"]);
+      toast.success("آگهی نشان شده با موفقیت حذف شد");
     },
   });
 
