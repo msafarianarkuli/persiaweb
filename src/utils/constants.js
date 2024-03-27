@@ -25,17 +25,19 @@ export const profileCardsInfo = [
 ];
 
 export const gender = [
-  { value: 0, label: "مرد" },
-  { value: 1, label: "زن" },
+  { value: "male", label: "مرد" },
+  { value: "female", label: "زن" },
+  { value: "no_matter", label: "تفاوتی ندارد" },
 ];
 
 export const education = [
-  { value: 0, label: "زیر دیپلم" },
-  { value: 1, label: "دیپلم" },
-  { value: 2, label: "کاردانی" },
-  { value: 3, label: "کارشناسی" },
-  { value: 4, label: "کارشناسی‌ارشد" },
-  { value: 5, label: "دکتری" },
+  { value: "middle_degree", label: "زیر دیپلم" },
+  { value: "diploma", label: "دیپلم" },
+  { value: "associate_degree", label: "کاردانی" },
+  { value: "bachelor", label: "کارشناسی" },
+  { value: "masters", label: "کارشناسی‌ارشد" },
+  { value: "phd", label: "دکتری" },
+  { value: "other", label: "سایر" },
 ];
 
 export const age = [

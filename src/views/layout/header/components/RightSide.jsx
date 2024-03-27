@@ -5,8 +5,8 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import SearchDropDown from "@/components/ui/buttons/SearchDropDown";
 import SearchInput from "@/components/ui/inputs/SearchInput";
 import logo from "@/assets/images/logo-primary.png";
-import useCategories from "@/services/hooks/categories/useCategories";
-import useProvinces from "@/services/hooks/area/useProvinces";
+import { useCategories } from "@/services/hooks/categories/useCategories";
+import { useProvinces } from "@/services/hooks/area/useProvinces";
 import { useState } from "react";
 import { useCommonStore } from "@/store/commonStore";
 
@@ -17,7 +17,6 @@ function RightSide() {
   const { data: provinces } = useProvinces({ search: provinceSearch });
   const setProvince = useCommonStore((state) => state.setProvince);
   const setCategory = useCommonStore((state) => state.setCategory);
-
   const inputs = [
     {
       id: 1,

@@ -82,7 +82,7 @@ const Select = ({
       {open ? (
         <div
           className={`flex flex-col z-30 absolute w-full max-h-[200px] overflow-y-auto border-2 border-bg-300 rounded top-[70px]`}>
-          {data.map((item) => (
+          {data?.map((item) => (
             <div
               className={`px-2 w-full h-full ${
                 text === item.value ? "bg-gray-100" : "bg-white"

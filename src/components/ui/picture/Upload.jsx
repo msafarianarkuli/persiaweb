@@ -8,10 +8,19 @@ const Upload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleUpload = (e) => {
-    if (e?.target?.files?.[0]) {
-      const file = e.target.files[0];
-      setSelectedImage(file);
-    }
+    const reader = new FileReader();
+
+    const file = e.target.files[0];
+    reader.onload = function (event) {
+      const binaryString = event.target.result; // Binary string representation of the file
+      // You can also use ArrayBuffer instead of binary string:
+      // const arrayBuffer = event.target.result;
+      // Do something with the binary file data
+    };
+
+    // Read the file as a binary string or ArrayBuffer
+    reader.readAsBinaryString(file);
+    setSelectedImage(file);
   };
 
   const handleRemoveProfile = () => {
