@@ -57,5 +57,16 @@ export const Advantages = [
   { value: 1, label: "نهار" },
   { value: 2, label: "هدایا مناسبتی" },
   { value: 3, label: "بیمه تکمیلی" },
-  { value: 3, label: "حقوق سر‌‌موقع" },
+  { value: 4, label: "حقوق سر‌‌موقع" },
+];
+
+export const work_experience = [
+  { value: "no_history_required", label: "مهم نیست" },
+  { value: "less_than_1_year", label: "کمتر از یک سال" },
+  { value: "at_least_1_year", label: "حداقل یک سال" },
+  { value: "at_least_2_years", label: "حداقل دو سال" },
+  { value: "at_least_3_years", label: "حداقل سه سال" },
+  { value: "at_least_4_years", label: "حداقل چهار سال" },
+  { value: "at_least_5_years", label: "حداقل پنج سال" },
+  { value: "more_than_5_years", label: "بیشتر از پنج سال" },
 ];

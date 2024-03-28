@@ -16,7 +16,7 @@ function VerifyForm() {
       ...body,
       redirect: false,
     });
-    router.push("/");
+    // router.push("/");
   };
 
   const data = useSession();

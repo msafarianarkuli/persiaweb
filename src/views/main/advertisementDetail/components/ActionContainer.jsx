@@ -9,10 +9,10 @@ import toast from "react-hot-toast";
 function ActionContainer({ data }) {
   const router = useRouter();
   const { mutate } = useMutation({
-    mutationKey: ["addbookmark"],
-    mutationFn: addBookmark,
+    mutationKey: ["deleteBookmark"],
+    mutationFn: deleteBookmark,
     onSuccess: () => {
-      toast("آگهی با موفقیت نشان شد");
+      toast("آگهی با موفقیت حذف شد");
     },
   });
   const handleSendResume = () => {

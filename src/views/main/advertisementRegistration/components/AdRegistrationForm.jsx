@@ -1,20 +1,34 @@
 "use client";
 import { Form, Formik } from "formik";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
 import Button from "@/components/ui/buttons/Button";
 import Input from "@/components/ui/inputs/input";
 import Select from "@/components/ui/inputs/Select";
-import { Advantages, education, gender } from "@/utils/constants";
+import {
+  Advantages,
+  education,
+  gender,
+  work_experience,
+} from "@/utils/constants";
 import Textarea from "@/components/ui/inputs/Textarea";
 import Checkbox from "@/components/ui/inputs/Checkbox";
 import Upload from "@/components/ui/picture/Upload";
 import { useSelectProvinces } from "@/services/hooks/area/useProvinces";
 import { useSelectCategories } from "@/services/hooks/categories/useCategories";
 import Radio from "@/components/ui/inputs/Radio";
+import addAdvertise from "@/services/api/advertises/addAdvertise";
 
 function AdRegistrationForm() {
   const { data: provinces } = useSelectProvinces();
   const { data: categories } = useSelectCategories();
-
+  const { mutate } = useMutation({
+    mutationKey: ["addAdvertise"],
+    mutationFn: addAdvertise,
+    onSuccess: () => {
+      toast.success("آگهی با موفقیت افزوده شد");
+    },
+  });
   const initialValues = {
     job_title: "",
     province_id: provinces?.[0],
@@ -28,12 +42,16 @@ function AdRegistrationForm() {
     end_time: "",
     gender: "",
     education: "",
-    "advantages[]": "",
+    advantages: "",
     job_location: "",
   };
 
   const onSubmit = (values) => {
-    console.log(values);
+    const data = {
+      ...values,
+      "advantages[]": values.advantages,
+    };
+    mutate(data);
   };
 
   return (
@@ -75,11 +93,12 @@ function AdRegistrationForm() {
             <Input type='text' name='age' id='age' label='سن مورد نیاز' />
           </div>
           <div className='grid grid-cols-1 gap-6 mt-6'>
-            <Input
-              type='text'
-              name='work_experience'
-              id='work_experience'
+            <Select
               label='سابقه کار مورد نیاز'
+              data={work_experience}
+              id='work_experience'
+              name='work_experience'
+              defaultValue={work_experience?.[0]}
             />
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6'>
@@ -137,11 +156,11 @@ function AdRegistrationForm() {
           <div className='grid grid-cols-1 gap-6 mt-6'>
             <div className='lg:flex'>
               <span className='me-4'>مزایا</span>
-              {Advantages.map((opt, index) => (
+              {Advantages.map((opt) => (
                 <Checkbox
                   label={opt.label}
-                  key={index}
-                  name='advantages[]'
+                  key={opt.value}
+                  name='advantages'
                   value={opt.value}
                 />
               ))}
