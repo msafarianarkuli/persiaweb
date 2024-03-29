@@ -53,11 +53,11 @@ export const english = [
 ];
 
 export const Advantages = [
-  { value: 0, label: "سرویس رفت و برگشت" },
-  { value: 1, label: "نهار" },
-  { value: 2, label: "هدایا مناسبتی" },
-  { value: 3, label: "بیمه تکمیلی" },
-  { value: 4, label: "حقوق سر‌‌موقع" },
+  { value: "round_trip_service", label: "سرویس رفت و برگشت" },
+  { value: "lunch", label: "نهار" },
+  { value: "occasional_gifts", label: "هدایا مناسبتی" },
+  { value: "supplementary_insurance", label: "بیمه تکمیلی" },
+  { value: "salary_on_time", label: "حقوق سر‌‌موقع" },
 ];
 
 export const work_experience = [

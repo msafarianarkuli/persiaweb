@@ -1,6 +1,7 @@
 "use client";
 import { Form, Formik } from "formik";
 import { useMutation } from "@tanstack/react-query";
+import * as yup from "yup";
 import { toast } from "react-hot-toast";
 import Button from "@/components/ui/buttons/Button";
 import Input from "@/components/ui/inputs/input";
@@ -18,17 +19,23 @@ import { useSelectProvinces } from "@/services/hooks/area/useProvinces";
 import { useSelectCategories } from "@/services/hooks/categories/useCategories";
 import Radio from "@/components/ui/inputs/Radio";
 import addAdvertise from "@/services/api/advertises/addAdvertise";
+import { useAdvertisementJobTitle } from "@/services/hooks/advertises/useAdvertisementJobTitle";
 
 function AdRegistrationForm() {
   const { data: provinces } = useSelectProvinces();
   const { data: categories } = useSelectCategories();
+  const { data: jobTitles } = useAdvertisementJobTitle();
   const { mutate } = useMutation({
     mutationKey: ["addAdvertise"],
     mutationFn: addAdvertise,
     onSuccess: () => {
       toast.success("آگهی با موفقیت افزوده شد");
     },
+    onError: (err) => {
+      toast.error(err.response.data.data.message);
+    },
   });
+
   const initialValues = {
     job_title: "",
     province_id: provinces?.[0],
@@ -46,6 +53,16 @@ function AdRegistrationForm() {
     job_location: "",
   };
 
+  const ValidateSchema = yup.object({
+    company_name: yup.string().required("لطفا نام شرکت را وارد نمایید"),
+    age: yup.string().required("لطفا سن را وارد نمایید"),
+    min_salary: yup.string().required("لطفا حداقل حقوق را وارد نمایید"),
+    max_salary: yup.string().required("لطفا حداکثر حقوق را وارد نمایید"),
+    start_time: yup.string().required("لطفا ساعت شروع کار را وارد نمایید"),
+    end_time: yup.string().required("لطفا ساعت پایان کار را وارد نمایید"),
+    job_location: yup.string().required("لطفا محل کار را وارد نمایید"),
+  });
+
   const onSubmit = (values) => {
     const data = {
       ...values,
@@ -59,13 +76,15 @@ function AdRegistrationForm() {
       <Upload />
       <Formik
         initialValues={initialValues}
-        onSubmit={(values) => onSubmit(values)}>
+        onSubmit={(values) => onSubmit(values)}
+        validationSchema={ValidateSchema}>
         <Form>
-          <Input
-            type='text'
-            name='job_title'
-            id='job_title'
+          <Select
             label='عنوان شغلی'
+            data={jobTitles}
+            id='job_title'
+            name='job_title'
+            defaultValue={jobTitles?.[0]}
           />
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6'>
             <Select
