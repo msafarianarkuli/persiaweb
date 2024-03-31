@@ -5,6 +5,7 @@ import { useCommonStore } from "@/store/commonStore";
 
 function SearchInput() {
   const setSearch = useCommonStore((state) => state.setSearch);
+
   return (
     <Formik
       initialValues={{ search: "" }}

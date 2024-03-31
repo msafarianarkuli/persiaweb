@@ -5,6 +5,7 @@ import { IoSearch } from "react-icons/io5";
 function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
   const dropdownRef = useRef(null);
   const [open, setOpen] = useState(false);
+
   const province = useCommonStore((state) => state.province);
   const category = useCommonStore((state) => state.category);
 

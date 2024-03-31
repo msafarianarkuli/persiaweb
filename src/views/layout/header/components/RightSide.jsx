@@ -7,18 +7,17 @@ import SearchInput from "@/components/ui/inputs/SearchInput";
 import logo from "@/assets/images/logo-primary.png";
 import { useCategories } from "@/services/hooks/categories/useCategories";
 import { useProvinces } from "@/services/hooks/area/useProvinces";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCommonStore } from "@/store/commonStore";
-import { useSetting } from "@/services/hooks/setting/useSetting";
 
 function RightSide() {
   const [provinceSearch, setProvinceSearch] = useState();
   const [categorySearch, setCategorySearch] = useState();
   const { data: categories } = useCategories({ search: categorySearch });
-  const { data: logo_and_favicon } = useSetting("logo_and_favicon");
   const { data: provinces } = useProvinces({ search: provinceSearch });
   const setProvince = useCommonStore((state) => state.setProvince);
   const setCategory = useCommonStore((state) => state.setCategory);
+
   const inputs = [
     {
       id: 1,
