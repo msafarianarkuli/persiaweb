@@ -1,8 +1,8 @@
 import Http from "@/services/HttpConfig";
 
-const getBookmarks = async () => {
-  const data = await Http.get("advertises/bookmarks");
-  return data?.data?.data;
+const getBookmarks = async ({ pageParam = 1 }) => {
+  const data = await Http.get(`advertises/bookmarks?page=${pageParam}`);
+  return { ...data?.data?.data, prevOffset: pageParam };
 };
 
 export default getBookmarks;
