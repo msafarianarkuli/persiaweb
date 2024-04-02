@@ -22,7 +22,6 @@ const Select = ({
   const [text, setText] = useState("");
   const [field] = useField(props);
   const componentRef = useRef(null);
-
   const handleClickOutside = (event) => {
     if (
       componentRef?.current &&

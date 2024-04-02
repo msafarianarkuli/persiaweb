@@ -21,10 +21,17 @@ export default function Textarea({
       <textarea
         id={id}
         className={`border border-text-300 rounded outline-none p-2 w-full bg-inherit
-             ${className}`}
+             ${className} ${
+          meta.touched && meta.error ? "border-red-400" : "border-text-300"
+        }`}
         placeholder={placeholder}
         {...props}
         {...field}></textarea>
+      {!!meta.touched && meta.error && (
+        <p className='text-red-500 text-sm font-semibold flex gap-x-2 items-center h-4 mt-2'>
+          <span>{!!meta.touched && meta.error}</span>
+        </p>
+      )}
     </div>
   );
 }

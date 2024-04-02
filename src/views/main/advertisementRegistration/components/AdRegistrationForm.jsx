@@ -47,9 +47,9 @@ function AdRegistrationForm() {
     max_salary: "",
     start_time: "",
     end_time: "",
-    gender: "",
-    education: "",
-    advantages: "",
+    gender: gender[0]?.value,
+    education: education[0]?.value,
+    advantages: Advantages[0]?.value,
     job_location: "",
   };
 
@@ -68,7 +68,8 @@ function AdRegistrationForm() {
       ...values,
       "advantages[]": values.advantages,
     };
-    mutate(data);
+    // mutate(data);
+    console.log(data);
   };
 
   return (
@@ -155,6 +156,7 @@ function AdRegistrationForm() {
                   key={index}
                   name='gender'
                   value={opt.value}
+                  checked={index === 0}
                 />
               ))}
             </div>
@@ -168,6 +170,7 @@ function AdRegistrationForm() {
                   key={index}
                   name='education'
                   value={opt.value}
+                  checked={index === 0}
                 />
               ))}
             </div>
@@ -175,12 +178,13 @@ function AdRegistrationForm() {
           <div className='grid grid-cols-1 gap-6 mt-6'>
             <div className='lg:flex'>
               <span className='me-4'>مزایا</span>
-              {Advantages.map((opt) => (
+              {Advantages.map((opt, index) => (
                 <Checkbox
                   label={opt.label}
                   key={opt.value}
                   name='advantages'
                   value={opt.value}
+                  checked={index === 0}
                 />
               ))}
             </div>
