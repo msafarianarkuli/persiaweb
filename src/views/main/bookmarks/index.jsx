@@ -41,7 +41,6 @@ function Bookmarks() {
   const bookmarks = data?.pages.reduce((acc, page) => {
     return [...acc, ...page?.data];
   }, []);
-  console.log(hasNextPage);
 
   const handleDelete = (id) => {
     mutate(id);

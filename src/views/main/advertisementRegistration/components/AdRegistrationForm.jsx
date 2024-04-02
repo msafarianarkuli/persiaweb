@@ -28,8 +28,8 @@ function AdRegistrationForm() {
   const { mutate } = useMutation({
     mutationKey: ["addAdvertise"],
     mutationFn: addAdvertise,
-    onSuccess: () => {
-      toast.success("آگهی با موفقیت افزوده شد");
+    onSuccess: (data) => {
+      toast.success(data?.data?.message);
     },
     onError: (err) => {
       toast.error(err.response.data.data.message);
