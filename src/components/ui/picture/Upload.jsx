@@ -3,23 +3,18 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { FaUser } from "react-icons/fa";
 
-const Upload = () => {
+const Upload = ({ onUpload }) => {
   const inputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleUpload = (e) => {
     const reader = new FileReader();
-
     const file = e.target.files[0];
-    reader.onload = function (event) {
-      const binaryString = event.target.result; // Binary string representation of the file
-      // You can also use ArrayBuffer instead of binary string:
-      // const arrayBuffer = event.target.result;
-      // Do something with the binary file data
-    };
+    reader.readAsDataURL(file);
 
-    // Read the file as a binary string or ArrayBuffer
-    reader.readAsBinaryString(file);
+    reader.onload = () => {
+      onUpload(reader.result);
+    };
     setSelectedImage(file);
   };
 

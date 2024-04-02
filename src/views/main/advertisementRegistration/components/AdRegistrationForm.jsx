@@ -20,8 +20,10 @@ import { useSelectCategories } from "@/services/hooks/categories/useCategories";
 import Radio from "@/components/ui/inputs/Radio";
 import addAdvertise from "@/services/api/advertises/addAdvertise";
 import { useAdvertisementJobTitle } from "@/services/hooks/advertises/useAdvertisementJobTitle";
+import { useState } from "react";
 
 function AdRegistrationForm() {
+  const [image, setImage] = useState();
   const { data: provinces } = useSelectProvinces();
   const { data: categories } = useSelectCategories();
   const { data: jobTitles } = useAdvertisementJobTitle();
@@ -67,14 +69,18 @@ function AdRegistrationForm() {
     const data = {
       ...values,
       "advantages[]": values.advantages,
+      company_logo: image,
     };
-    // mutate(data);
-    console.log(data);
+    mutate(data);
+  };
+
+  const handleupload = (base64) => {
+    setImage(base64);
   };
 
   return (
     <div className='md:px-[170px]'>
-      <Upload />
+      <Upload onUpload={handleupload} />
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => onSubmit(values)}

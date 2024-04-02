@@ -9,7 +9,6 @@ export default function Input({
   ...props
 }) {
   const [field, meta] = useField(props);
-  console.log(meta.touched);
   return (
     <div className={`flex ${top ? "flex-col" : ""}`}>
       {label ? (
