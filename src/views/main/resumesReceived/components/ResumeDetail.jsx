@@ -1,6 +1,6 @@
 import { useResume } from "@/services/hooks/resumes/useResume";
 import { useResumePdf } from "@/services/hooks/resumes/useResumePdf";
-import { education, gender } from "@/utils/constants";
+import { education, english, gender, military_status } from "@/utils/constants";
 import { useParams, usePathname, useSearchParams } from "next/navigation";
 
 function ResumeDetail() {
@@ -13,7 +13,7 @@ function ResumeDetail() {
     <>
       <div className='flex justify-between'>
         <p className='text-primary-blue'>
-          اطلاعات رزومه {data?.user?.full_name} | {data?.advertise?.job_title}
+          اطلاعات رزومه {data?.full_name} | {data?.advertise?.job_title}
         </p>
         <p className='text-primary-blue'>دانلود در PDF</p>
       </div>
@@ -22,7 +22,7 @@ function ResumeDetail() {
           <li>
             <span className='font-medium'>نام و نام‌خانوادگی:</span>
             {"\u00A0"}
-            <span className='font-light'>{data?.user?.full_name}</span>
+            <span className='font-light'>{data?.full_name}</span>
           </li>
           <li>
             <span className='font-medium'>جنسیت:</span>
@@ -53,15 +53,28 @@ function ResumeDetail() {
               {education?.find((g) => g.value === data?.education)?.label}
             </span>
           </li>
-          <li>
-            <span className='font-medium'>وظعیت نظام وظیفه:</span>
-            {"\u00A0"}
-            <span className='font-light'>{data?.military_status}</span>
-          </li>
+          {data?.gender === "male" && (
+            <li>
+              <span className='font-medium'>وظعیت نظام وظیفه:</span>
+              {"\u00A0"}
+              <span className='font-light'>
+                {
+                  military_status?.find(
+                    (g) => g.value === data?.military_status
+                  )?.label
+                }
+              </span>
+            </li>
+          )}
           <li>
             <span className='font-medium'>سطح زبان انگلیسی:</span>
             {"\u00A0"}
-            <span className='font-light'>{data?.english_lan_status}</span>
+            <span className='font-light'>
+              {
+                english?.find((g) => g.value === data?.english_lan_status)
+                  ?.label
+              }
+            </span>
           </li>
           <li>
             <span className='font-medium'>میزان حقوق درخواستی:</span>

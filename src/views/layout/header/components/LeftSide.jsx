@@ -4,12 +4,15 @@ import { AiOutlineIdcard } from "react-icons/ai";
 import { LuBellRing } from "react-icons/lu";
 import usePrivateLink from "@/hooks/usePrivateLink";
 import { useSession } from "next-auth/react";
+import { useResumes } from "@/services/hooks/resumes/useResumes";
 
 function LeftSide() {
   const { status } = useSession();
-  const notif = true;
+  const { data } = useResumes();
+  const notif = !!data?.data?.find((data) => data.is_seen === 0);
   const profile = usePrivateLink({ link: "/profile" });
   const resumes = usePrivateLink({ link: "/resumes-received" });
+
   return (
     <div className='hidden lg:flex gap-x-4 items-center '>
       <Link href={profile} className='ouline-white-button'>

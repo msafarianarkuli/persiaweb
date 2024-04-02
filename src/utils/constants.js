@@ -46,10 +46,15 @@ export const age = [
 ];
 
 export const english = [
-  { value: 0, label: "عالی" },
-  { value: 1, label: "خوب" },
-  { value: 2, label: "متوسط" },
-  { value: 3, label: "ضعیف" },
+  { value: "beginner", label: "مبتدی" },
+  { value: "medium", label: "متوسط" },
+  { value: "professional", label: "حرفه ای" },
+];
+
+export const military_status = [
+  { value: "included", label: "در حال خدمت" },
+  { value: "the_end", label: "اتمام خدمت" },
+  { value: "exempt", label: "معاف" },
 ];
 
 export const Advantages = [
