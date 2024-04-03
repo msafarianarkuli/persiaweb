@@ -6,7 +6,7 @@ import Button from "../ui/buttons/Button";
 function AdCard({ item, bg = "bg-white", del, onDel }) {
   return del ? (
     <div
-      className={`flex p-2 rounded-md gap-x-4 shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] hover:shadow-[0px_0px_9px_0px_rgba(0,0,0,0.5)] custom-transition ${bg}`}>
+      className={`flex p-2 rounded-md gap-x-4 shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] hover:shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] custom-transition ${bg}`}>
       {item?.company_logo && (
         <Image
           width={110}
@@ -30,7 +30,7 @@ function AdCard({ item, bg = "bg-white", del, onDel }) {
   ) : (
     <Link
       href={`advertisements/${item?.slug}`}
-      className={`flex p-2 rounded-md gap-x-4 shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] hover:shadow-[0px_0px_9px_0px_rgba(0,0,0,0.5)] custom-transition ${bg}`}>
+      className={`flex p-2 rounded-md gap-x-4 shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] hover:shadow-[0px_0px_7px_-4px_rgba(0,0,0,0.5)] custom-transition ${bg}`}>
       {item?.company_logo && (
         <Image
           width={110}
