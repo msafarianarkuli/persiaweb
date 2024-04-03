@@ -30,7 +30,6 @@ function SearchDropDown({ title, Icon, width, items, onChange, onClick }) {
     setOpen(false);
     onClick(id, title);
   };
-
   return (
     <div className='relative' ref={dropdownRef}>
       <button

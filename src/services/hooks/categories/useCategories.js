@@ -5,6 +5,15 @@ export const useCategories = ({ search }) => {
   return useQuery({
     queryKey: ["categories", search],
     queryFn: () => getCategories({ search }),
+    select: (data) => {
+      const initialProvince = {
+        id: 0,
+        title: "همه مشاغل",
+        slug: "همه مشاغل",
+      };
+      const main = [initialProvince, ...data.data];
+      return main;
+    },
   });
 };
 

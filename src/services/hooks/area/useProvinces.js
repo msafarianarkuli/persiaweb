@@ -5,6 +5,15 @@ export const useProvinces = ({ search }) => {
   return useQuery({
     queryKey: ["provinces", search],
     queryFn: () => getProvinces({ search }),
+    select: (data) => {
+      const initialProvince = {
+        id: 0,
+        title: "همه استان ها",
+        slug: "همه استان ها",
+      };
+      const main = [initialProvince, ...data.data];
+      return main;
+    },
   });
 };
 
