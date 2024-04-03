@@ -1,12 +1,18 @@
 "use client";
 import { useCategories } from "@/services/hooks/categories/useCategories";
+import { useCommonStore } from "@/store/commonStore";
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
-const FooterModal = ({ onClose }) => {
+const CategoryModal = ({ onClose }) => {
   const [categorySearch, setCategorySearch] = useState("");
   const { data: categories } = useCategories({ search: categorySearch });
-  console.log(categories);
+  const setCategory = useCommonStore((state) => state.setCategory);
+
+  const handleOnClick = (id, title) => {
+    setCategory(id, title);
+    onClose();
+  };
   return (
     <div className='py-12 px-20 relative z-50'>
       <div className='p-3'>
@@ -22,8 +28,17 @@ const FooterModal = ({ onClose }) => {
           />
         </div>
       </div>
+      <div class='text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded w-full'>
+        {categories?.data?.map((cat) => (
+          <div
+            onClick={() => handleOnClick(cat?.id, cat?.title)}
+            className='block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700'>
+            {cat?.title}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default FooterModal;
+export default CategoryModal;

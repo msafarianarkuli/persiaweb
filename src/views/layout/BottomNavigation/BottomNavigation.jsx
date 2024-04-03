@@ -6,33 +6,36 @@ import { FaMapMarkerAlt, FaPlus, FaUser } from "react-icons/fa";
 import { BiSolidBriefcaseAlt2 } from "react-icons/bi";
 import Footer from "../footer";
 import Modal from "@/components/ui/modal/Modal";
-import FooterModal from "./components/FooterModal";
+import FooterModal from "./components/CategoryModal";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/buttons/Button";
 import useDeviceWidth from "@/hooks/useDeviceWidth";
-
-const items = [
-  { id: 1, Icon: FaMapMarkerAlt, title: "همه استان‌ها", link: "" },
-  { id: 2, Icon: BiSolidBriefcaseAlt2, title: "همه مشاغل", link: "" },
-  {
-    id: 3,
-    Icon: FaPlus,
-    title: "ثبت آگهی",
-    link: "advertisement-registration",
-  },
-  { id: 4, Icon: FaRegIdCard, title: "رزومه‌ها", link: "resumes-received" },
-  { id: 5, Icon: FaUser, title: "پروفایل من", link: "profile" },
-];
+import { useCommonStore } from "@/store/commonStore";
+import ProvinceModal from "./components/ProvinceModal";
 
 function BottomNavigation() {
+  const category = useCommonStore((state) => state.category);
+  const province = useCommonStore((state) => state.province);
   const asPath = usePathname();
   const [modalInfo, setModalInfo] = useState({ showModal: false, modalId: 0 });
-
   const isMobile = useDeviceWidth() < 600;
 
   const routeDevide = asPath.split("/");
   const isBottomNavigation =
     routeDevide[1] === "advertisements" && Boolean(routeDevide[2]);
+
+  const items = [
+    { id: 1, Icon: FaMapMarkerAlt, title: province?.title, link: "" },
+    { id: 2, Icon: BiSolidBriefcaseAlt2, title: category?.title, link: "" },
+    {
+      id: 3,
+      Icon: FaPlus,
+      title: "ثبت آگهی",
+      link: "advertisement-registration",
+    },
+    { id: 4, Icon: FaRegIdCard, title: "رزومه‌ها", link: "resumes-received" },
+    { id: 5, Icon: FaUser, title: "پروفایل من", link: "profile" },
+  ];
 
   const handleOpenModal = (id) => {
     setModalInfo({ showModal: true, modalId: id });
@@ -86,12 +89,16 @@ function BottomNavigation() {
           )}
         </div>
       </div>
-      {modalInfo.showModal &&
-        (modalInfo.modalId === 1 || modalInfo.modalId === 2) && (
-          <Modal onClose={handleCloseModal}>
-            <FooterModal onClose={handleCloseModal} />
-          </Modal>
-        )}
+      {modalInfo.showModal && modalInfo.modalId === 2 && (
+        <Modal onClose={handleCloseModal}>
+          <FooterModal onClose={handleCloseModal} />
+        </Modal>
+      )}
+      {modalInfo.showModal && modalInfo.modalId === 1 && (
+        <Modal onClose={handleCloseModal}>
+          <ProvinceModal onClose={handleCloseModal} />
+        </Modal>
+      )}
     </>
   );
 }
