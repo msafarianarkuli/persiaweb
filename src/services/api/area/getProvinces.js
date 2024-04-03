@@ -3,7 +3,7 @@ import { API } from "@/services/const";
 
 const getProvinces = async ({ search }) => {
   const data = await Http.get(
-    `${API.PROVINCES}${search ? `?search=${search}` : ""}?no_page=1`
+    `${API.PROVINCES}?no_page=1${search ? `&search=${search}` : ""}`
   );
   return data?.data;
 };

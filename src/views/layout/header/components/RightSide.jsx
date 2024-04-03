@@ -17,7 +17,6 @@ function RightSide() {
   const { data: provinces } = useProvinces({ search: provinceSearch });
   const setProvince = useCommonStore((state) => state.setProvince);
   const setCategory = useCommonStore((state) => state.setCategory);
-
   const inputs = [
     {
       id: 1,
