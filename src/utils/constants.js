@@ -40,11 +40,6 @@ export const education = [
   { value: "other", label: "سایر" },
 ];
 
-export const age = [
-  { value: 0, label: "سربازی رفته ام" },
-  { value: 1, label: "معاف شده ام" },
-];
-
 export const english = [
   { value: "beginner", label: "مبتدی" },
   { value: "medium", label: "متوسط" },
