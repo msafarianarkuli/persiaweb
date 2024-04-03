@@ -7,8 +7,8 @@ function ResumeDetail() {
   const searchParams = useSearchParams();
   const resume_id = searchParams.get("resume_id");
   const { data } = useResume(resume_id);
-  // const { data: pdf } = useResumePdf(resume_id);
-  // console.log(data);
+  const { data: pdf } = useResumePdf(resume_id);
+  console.log(pdf);
   return (
     <>
       <div className='flex justify-between'>

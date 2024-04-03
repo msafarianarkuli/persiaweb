@@ -16,7 +16,9 @@ function VerifyForm() {
       ...body,
       redirect: false,
     });
-    // router.push("/");
+    setTimeout(() => {
+      router.push("/");
+    }, 2000);
   };
 
   const data = useSession();

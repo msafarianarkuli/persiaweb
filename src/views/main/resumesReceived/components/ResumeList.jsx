@@ -14,11 +14,10 @@ function ResumeList({ onOpen }) {
       refetch();
     }
   }, [isSuccess]);
-
   return data?.data?.map((item, index) => (
     <ResumeCard
       key={item.id}
-      title={item.full_name + " | " + item.advertise.job_title}
+      title={item?.full_name + " | " + item?.advertise?.job_title}
       last={data?.data?.length - 1 === index}
       onOpen={onOpen}
       item={item}
