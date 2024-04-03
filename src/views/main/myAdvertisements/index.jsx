@@ -1,6 +1,5 @@
 "use client";
 import H1 from "@/components/ui/heading/H1";
-import Container from "../home/components/Container";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { useMyAdvertisements } from "@/services/hooks/advertises/useMyAdvertisements";
@@ -8,9 +7,11 @@ import { AdCard } from "@/components";
 
 function MyAdvertisements() {
   const { data, fetchNextPage, hasNextPage } = useMyAdvertisements();
+
   const ads = data?.pages.reduce((acc, page) => {
     return [...acc, ...page?.data];
   }, []);
+
   const handleDelete = () => {};
   return (
     <main>
