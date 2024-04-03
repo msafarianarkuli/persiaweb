@@ -3,11 +3,30 @@ import { FaBookmark } from "react-icons/fa";
 import { BsFillClipboard2CheckFill } from "react-icons/bs";
 import ActionCard from "./ActionCard";
 import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import addBookmark from "@/services/api/bookmarks/addBookmark";
 import toast from "react-hot-toast";
+import getProfile from "@/services/api/profile/getProfile";
+import { useResume } from "@/services/hooks/resumes/useResume";
+import addResume from "@/services/api/resumes/addResume";
 function ActionContainer({ data }) {
   const router = useRouter();
+
+  const { data: profile } = useQuery({
+    queryKey: ["profile"],
+    queryFn: getProfile,
+  });
+
+  const { data: resume } = useResume(profile?.id);
+
+  const { mutate: sendResume } = useMutation({
+    mutationKey: ["addResume"],
+    mutationFn: addResume,
+    onSuccess: (data) => {
+      toast.success(data?.message);
+    },
+  });
+
   const { mutate } = useMutation({
     mutationKey: ["addBookmark"],
     mutationFn: addBookmark,
@@ -15,8 +34,11 @@ function ActionContainer({ data }) {
       toast("آگهی با موفقیت نشان شد");
     },
   });
+
   const handleSendResume = () => {
-    // router.push("/my-resume");
+    resume
+      ? sendResume({ ...resume, resume_id: data.id })
+      : router.push("/my-resume");
   };
 
   const handleBookmark = () => {

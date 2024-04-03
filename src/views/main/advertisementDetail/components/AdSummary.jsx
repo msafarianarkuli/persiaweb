@@ -1,5 +1,4 @@
 import H1 from "@/components/ui/heading/H1";
-import image from "@/assets/images/ads.png";
 import Image from "next/image";
 
 function AdSummary({ data }) {
@@ -17,14 +16,16 @@ function AdSummary({ data }) {
         </div>
         <div className='w-full flex justify-center items-center order-1 md:order-2'>
           <div className='w-[300px]'>
-            <Image
-              src={`https://ja.p65.ir${data?.company_logo}`}
-              alt=''
-              priority
-              width={300}
-              height={300}
-              className='rounded mt-10'
-            />
+            {data?.company_logo && (
+              <Image
+                src={`https://ja.p65.ir${data?.company_logo}`}
+                alt=''
+                priority
+                width={300}
+                height={300}
+                className='rounded mt-10'
+              />
+            )}
           </div>
         </div>
       </div>

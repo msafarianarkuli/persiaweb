@@ -11,7 +11,7 @@ function AdvertisementDetail() {
   const path = usePathname();
   const slug = path.split("/")[2];
   const { data } = useAdvertisement(slug);
-  console.log(data);
+
   return (
     <Container className='bg-white my-6 md:px-28'>
       <AdSummary data={data?.object} />
